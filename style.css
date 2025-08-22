@@ -1,0 +1,193 @@
+/* ==========================================================
+   style.css - Estilos principales de la Pokedex
+   Autor: Sebastian Salgado
+   Última actualización: 2025-08-21
+   ========================================================== */
+
+/* ==============================
+   VARIABLES CSS Y TEMAS
+   ============================== */
+:root {
+  --pokemon-red: #FF0000;
+  --pokemon-blue: #3B4CCA;
+  --pokemon-yellow: #FFDE00;
+  --pokemon-gray: #f8f9fa;
+
+  --bg-light: #f8f9fa;
+  --bg-dark: #222;
+  --text-light: #222;
+  --text-dark: #f0f0f0;
+}
+
+/* Tema oscuro */
+[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ==============================
+   ESTILO GENERAL DEL BODY
+   ============================== */
+body {
+  font-family: 'Rubik', Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema oscuro para body */
+[data-theme="dark"] body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ==============================
+   HEADER PRINCIPAL
+   ============================== */
+.pokemon-header {
+  background: linear-gradient(135deg, var(--pokemon-red) 0%, var(--pokemon-blue) 100%);
+  color: var(--pokemon-yellow);
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-bottom: 5px solid var(--pokemon-yellow);
+  position: relative;
+  padding-right: 4rem;
+}
+
+.pokemon-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.pokemon-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+}
+
+#btnTheme {
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ==============================
+   CONTENEDORES DE INFORMACIÓN
+   ============================== */
+.pokemon-info-box {
+  background: #fffbe7;
+  border: 2px solid #ffd600;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px #ffd60030;
+  min-height: 150px;
+  overflow-wrap: break-word;
+}
+
+/* ==============================
+   BADGES Y ETIQUETAS
+   ============================== */
+.badge {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL DEL POKÉMON
+   ============================== */
+#pokemonContainer {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  max-width: 400px;
+  margin: 1.5rem auto 0 auto;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: background 0.4s, opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+#pokemonContainer img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+   BOTÓN FAVORITO
+   ============================== */
+.btn-poke-yellow {
+  background: var(--pokemon-yellow);
+  color: var(--pokemon-red);
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.btn-poke-yellow:hover {
+  background: var(--pokemon-red);
+  color: var(--pokemon-yellow);
+}
+
+/* ==============================
+   BARRAS DE ESTADÍSTICAS
+   ============================== */
+.stat-bar-container {
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 5px;
+}
+.stat-bar {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.hp { background-color: #ff5959; }
+.attack { background-color: #ffbd59; }
+.defense { background-color: #3b82f6; }
+.special-attack { background-color: #a855f7; }
+.special-defense { background-color: #14b8a6; }
+.speed { background-color: #facc15; }
+
+/* ==============================
+   SECCIÓN FAVORITOS
+   ============================== */
+#favoritos {
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+#favoritos .card {
+  width: 90px;
+  border: 1.5px solid #e3350d;
+}
+#favoritos .card img {
+  width: 56px;
+  margin: auto;
+  display: block;
+}
+#favoritos .btn-sm {
+  background: var(--pokemon-yellow);
+  color: var(--pokemon-red);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+@media (max-width: 600px) {
+  #pokemonContainer {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .pokemon-title {
+    font-size: 1.5rem;
+  }
+  .pokemon-info-box {
+    min-height: auto;
+  }
+}
+
